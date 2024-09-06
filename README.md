@@ -1,4 +1,4 @@
-# Assessment 4 - ReactJS: AirBrB
+# ReactJS: PropRental-Pro
 
 1. Background & Motivation
 2. The Task (Frontend)
