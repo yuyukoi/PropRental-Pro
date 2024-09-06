@@ -25,24 +25,24 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      // main: pink[100],
-      main: '#673ab7',
+      main: 'rgba(160, 147, 184, 0.16)',
     },
     secondary: {
-      // main: blue[300],
       main: '#ffc107',
     },
   },
 });
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
-  fontWeight: 700,
-  color: 'white',
+  fontWeight: 600,
+  fontSize: '27px',
+  fontFamily: 'cursive',
+  color: '#6f4e83',
   cursor: 'pointer',
   transition: 'color 0.3s ease',
   '&:hover': {
-    color: theme.palette.primary.dark,
-    textShadow: '0px 0px 8px rgba(0, 0, 0, 0.5)',
+    color: theme.palette.primary.light,
+    // textShadow: '0px 0px 8px rgba(0, 0, 0, 0.5)',
   },
 }));
 
@@ -78,8 +78,8 @@ const Header = (para) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position='static'>
-        <Toolbar>
+      <AppBar position='static' style={{ boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.15)' }}>
+        <Toolbar style={{ height: '80px' }}>
         {para.token && (
           <IconButton id='totalButton'
             size='large'
@@ -92,15 +92,15 @@ const Header = (para) => {
             <MenuIcon />
           </IconButton>
         )}
-          <StyledTitle textAlign='center' variant='h6' component='div' sx={{ flexGrow: 1 }}>
+          <StyledTitle textAlign='left' variant='h6' component='div' sx={{ flexGrow: 1 }}>
             <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }} id='airbrb'>PropRental-Pro</Link>
           </StyledTitle>
           {!para.token && (
-            <Button color='inherit' onClick={whenRegister}>
-              Register
+            <Button onClick={whenRegister} style={{ fontSize: '15px', backgroundColor: '#e6684c', color: '#eee5e5', borderRadius: '10px', margin: '8px' }}>
+              JOIN
             </Button>
           )}
-          <Button id='logout' color='inherit' onClick={whenLoginLogout}>
+          <Button id='logout' onClick={whenLoginLogout} style={{ fontSize: '15px', backgroundColor: '#d0b5d8', color: '#6f4e83', borderRadius: '10px' }}>
             {para.token ? 'Log Out' : 'Log In'}
           </Button>
         </Toolbar>
