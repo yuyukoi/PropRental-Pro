@@ -18,17 +18,19 @@ import '@fontsource/roboto/700.css';
 import { Typography, Button, AppBar, Toolbar, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import pink from '@mui/material/colors/pink';
-import blue from '@mui/material/colors/blue';
+// import pink from '@mui/material/colors/pink';
+// import blue from '@mui/material/colors/blue';
 
 // Click the button on the left to ‘Create my listings’/'View my listings'/'View all listings'
 const theme = createTheme({
   palette: {
     primary: {
-      main: pink[200],
+      // main: pink[100],
+      main: '#673ab7',
     },
     secondary: {
-      main: blue[300],
+      // main: blue[300],
+      main: '#ffc107',
     },
   },
 });
@@ -91,7 +93,7 @@ const Header = (para) => {
           </IconButton>
         )}
           <StyledTitle textAlign='center' variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }} id='airbrb'>AirBrB</Link>
+            <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }} id='airbrb'>PropRental-Pro</Link>
           </StyledTitle>
           {!para.token && (
             <Button color='inherit' onClick={whenRegister}>
